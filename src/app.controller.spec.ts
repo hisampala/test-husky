@@ -1,7 +1,7 @@
 import { Test, TestingModule } from "@nestjs/testing";
 import { AppController } from "./app.controller";
 import { AppService } from "./app.service";
-import * as request from "supertest";
+
 describe("AppController", () => {
   let appController: AppController;
 
@@ -19,8 +19,12 @@ describe("AppController", () => {
       expect(appController.getHello()).toBe("Hello World!");
     });
     const Item1 = { text: "Item1" };
-    it("should return Item 1", () => {
+    it("should return  Item1", () => {
       expect(appController.createText(Item1)).toBe(Item1);
     });
+    // it("should toEqual Item1", () => {
+    //   const Item2 = { text: "Hi" };
+    //   expect(Item1).toEqual(Item2);
+    // });
   });
 });
